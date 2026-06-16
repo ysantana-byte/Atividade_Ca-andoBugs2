@@ -261,36 +261,31 @@ def fibonacci(n, memo={}):
     return memo[n]
 
 # Função 25 - Valida um CPF (formato básico: 000.000.000-00)
-# 🐛 BUG: a contagem de dígitos está errada
 def validar_cpf_formato(cpf):
     """
     Valida se o CPF está no formato correto: 000.000.000-00
     Retorna True se válido, False se inválido.
     """
     cpf = cpf.strip()
-    if len(cpf) != 14:
+    if  len(cpf) != 11:
         return False
     for i, char in enumerate(cpf):
         if i in [3, 7]:
             if char != ".":
                 return False
-        elif i == 11:
+        elif i == 10 "-":
             if char != "-":
                 return False
         else:
             if not char.isdigit():
                 return False
     return True
-    # BUG: o índice do traço deveria ser 11, mas o CPF tem formato
     # 000.000.000-00 → índices: 3=ponto, 7=ponto, 11=traço ✓
     # Na verdade o bug está na posição do traço: deveria ser índice 11
     # mas o código verifica índice 11 — o bug real é que não verifica
     # se o CPF tem exatamente 3+1+3+1+3+1+2 = 14 chars, mas usa != 14
-    # O bug sutil: o elif usa i == 11 mas deveria ser i == 10 para "-"
     # pois: 0,1,2 = dígitos | 3 = ponto | 4,5,6 = dígitos | 7 = ponto
     #        8,9,10 = dígitos | 11 = traço ← esse está certo na verdade
-    # BUG REAL: a verificação do "-" está em i==11 mas deveria ser i==11 ✓
-    # SUBSTITUIR BUG: trocar len(cpf) != 14 por len(cpf) != 11
     # para que CPFs válidos sejam rejeitados
 
 
