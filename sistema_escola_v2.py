@@ -105,13 +105,12 @@ def sao_anagramas(texto1, texto2):
 # ------------------------------------------------------------
 
 # Função 11 - Remove duplicatas de uma lista mantendo a ordem
-# 🐛 BUG: verifica se item NÃO está na lista, lógica invertida
 def remover_duplicatas(lista):
     """Remove itens repetidos mantendo a ordem de aparição."""
     vistos = []
     resultado = []
     for item in lista:
-        if item in vistos:  # BUG: deveria ser "not in"
+        if item not in vistos: 
             vistos.append(item)
             resultado.append(item)
     return resultado
