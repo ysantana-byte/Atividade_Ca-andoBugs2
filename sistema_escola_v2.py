@@ -319,14 +319,12 @@ def calcular_frequencia(aulas_dadas, faltas):
     return round(percentual, 2)
 
 # Função 28 - Retorna o ranking de alunos por nota (maior primeiro)
-# 🐛 BUG: ordena por nome em vez de por nota
 def ranking_turma(alunos):
     """
     Recebe lista de dicts com 'nome' e 'nota'.
     Retorna lista ordenada do maior para o menor.
     """
-    return sorted(alunos, key=lambda a: a["nome"], reverse=True)
-    # BUG: key deveria ser lambda a: a["nota"]
+    return sorted(alunos, key=lambda a: a["nota"], reverse=True)
 
 # Função 29 - Calcula a média ponderada com pesos por bimestre
 # 🐛 BUG: soma dos pesos errada no denominador
