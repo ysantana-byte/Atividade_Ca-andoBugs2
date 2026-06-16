@@ -116,17 +116,14 @@ def remover_duplicatas(lista):
             resultado.append(item)
     return resultado
 
-# Função 12 - Intercala dois listas em uma só
-# 🐛 BUG: range usa len errado quando as listas têm tamanho diferente
+# Função 12 - Intercala dois listas em uma só 
 def intercalar_listas(lista1, lista2):
     """Intercala os elementos de duas listas: [a,b], [x,y] → [a,x,b,y]."""
     resultado = []
     tamanho = min(len(lista1), len(lista2))
     for i in range(tamanho):
         resultado.append(lista1[i])
-        resultado.append(lista2[i])
-    # BUG: não adiciona os elementos restantes da lista maior
-    return resultado
+        return resultado
 
 # Função 13 - Implementa busca binária
 # 🐛 BUG: condição do while errada
