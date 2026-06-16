@@ -125,12 +125,11 @@ def intercalar_listas(lista1, lista2):
         return resultado
 
 # Função 13 - Implementa busca binária
-# 🐛 BUG: condição do while errada
 def busca_binaria(lista_ordenada, alvo):
     """Busca um valor em lista ordenada. Retorna o índice ou -1."""
     inicio = 0
     fim = len(lista_ordenada) - 1
-    while inicio > fim:  # BUG: deveria ser inicio <= fim
+    while inicio <= fim
         meio = (inicio + fim) // 2
         if lista_ordenada[meio] == alvo:
             return meio
