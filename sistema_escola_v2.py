@@ -294,7 +294,6 @@ def validar_cpf_formato(cpf):
 # ------------------------------------------------------------
 
 # Função 26 - Gera boletim completo com situação por disciplina
-# 🐛 BUG: média de recuperação está somando em vez de fazer média
 def gerar_boletim(nome, notas_bimestres):
     """
     Recebe nome e lista com 4 notas bimestrais.
@@ -307,7 +306,7 @@ def gerar_boletim(nome, notas_bimestres):
         boletim["situacao"] = "Aprovado"
     else:
         boletim["situacao"] = "Recuperação"
-        nota_necessaria = (6 - media) + media  # BUG: deveria ser (6*2) - media ou (12 - media) / 1
+        nota_necessaria = (6*2) - media ou (12 - media) / 1
         boletim["nota_recuperacao"] = round(nota_necessaria, 2)
 
     return boletim
