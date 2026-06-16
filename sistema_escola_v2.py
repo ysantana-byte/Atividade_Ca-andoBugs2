@@ -159,12 +159,11 @@ def achatar_lista(lista_de_listas):
 # ------------------------------------------------------------
 
 # Função 16 - Inverte as chaves e valores de um dicionário
-# 🐛 BUG: chave e valor invertidos no novo dicionário
 def inverter_dicionario(dicionario):
     """Retorna um novo dicionário com chaves e valores trocados."""
     novo = {}
     for chave, valor in dicionario.items():
-        novo[chave] = valor  # BUG: deveria ser novo[valor] = chave
+         novo[valor] = chave
     return novo
 
 # Função 17 - Mescla dois dicionários (o segundo sobrescreve o primeiro)
