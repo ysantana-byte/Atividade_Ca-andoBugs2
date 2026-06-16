@@ -44,15 +44,14 @@ def listar_divisores(n):
     return divisores
 
 # Função 4 - Verifica se um número é primo
-# 🐛 BUG: retornos invertidos
 def eh_primo(n):
     """Retorna True se n for primo."""
     if n < 2:
         return True  # BUG: deveria ser False
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
-            return True  # BUG: deveria ser False
-    return False  # BUG: deveria ser True
+            return False
+    return True
 
 # Função 5 - Calcula o fatorial de forma recursiva
 # 🐛 BUG: caso base errado, causa recursão infinita ou resultado errado
