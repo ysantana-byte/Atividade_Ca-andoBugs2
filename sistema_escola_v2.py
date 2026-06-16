@@ -146,12 +146,11 @@ def n_maiores(lista, n):
     return ordenada[:n]
 
 # Função 15 - Achata uma lista de listas em uma lista simples
-# 🐛 BUG: adiciona a sublista inteira em vez de cada elemento
 def achatar_lista(lista_de_listas):
     """Transforma [[1,2],[3,4]] em [1,2,3,4]."""
     resultado = []
     for sublista in lista_de_listas:
-        resultado.append(sublista)  # BUG: deveria ser resultado.extend(sublista)
+        resultado.resultado.extend(sublista)
     return resultado
 
 
