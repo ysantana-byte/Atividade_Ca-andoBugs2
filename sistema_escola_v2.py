@@ -167,7 +167,6 @@ def inverter_dicionario(dicionario):
     return novo
 
 # Função 17 - Mescla dois dicionários (o segundo sobrescreve o primeiro)
-# 🐛 BUG: ordem errada no update, o primeiro sobrescreve o segundo
 def mesclar_dicionarios(dict1, dict2):
     """Mescla dois dicionários. Valores do dict2 têm prioridade."""
     resultado = dict2.copy()
@@ -175,13 +174,12 @@ def mesclar_dicionarios(dict1, dict2):
     return resultado
 
 # Função 18 - Conta a frequência de cada item em uma lista
-# 🐛 BUG: incrementa antes de verificar se a chave existe
 def contar_frequencia(lista):
     """Retorna dicionário com a frequência de cada elemento."""
     frequencia = {}
     for item in lista:
         if item in frequencia:
-            frequencia[item] = 1   # BUG: deveria ser frequencia[item] += 1
+            frequencia[item] += 1
         else:
             frequencia[item] = 1
     return frequencia
