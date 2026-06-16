@@ -209,13 +209,12 @@ def agrupar_por_turma(alunos):
 # ------------------------------------------------------------
 
 # Função 21 - Retorna estatísticas de uma lista de notas
-# 🐛 BUG: o mínimo e máximo estão trocados
 def estatisticas_notas(notas):
     """Retorna um dicionário com média, maior e menor nota."""
     return {
         "media": sum(notas) / len(notas),
-        "maior": min(notas),   # BUG: deveria ser max(notas)
-        "menor": max(notas),   # BUG: deveria ser min(notas)
+        "maior": max(notas)
+        "menor": min(notas)
     }
 
 # Função 22 - Classifica aluno com base em média e frequência
